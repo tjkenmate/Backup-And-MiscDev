@@ -7,19 +7,19 @@
 			TileEntity clay = (TileClayMaker) tileEntity;
 			if(heldItem.getItem() == Block.getItemFromBlock(BLOCKS.Dirt))
 				if(clay.addDirt())
-					//reduce stack
+					heldItem.stackSize--;
 			else if(heldItem.getItem() == Block.getItemFromBlock(BLOCKS.Sand))
 				if(clay.addSand())
-					//reduce stack
+					heldItem.stackSize--;
 			else if(heldItem.getItem() == ITEMS.water_bucket){
 				if(clay.addWater(10)){
-					//reduce stack
+					heldItem.stackSize--;
 					clay.spawn("bucket");
 				}
 			}
 			else if(heldItem.getItem() == ITEMS.water_bottle){
 				if(clay.addWater(5)){
-					//reduce stack
+					heldItem.stackSize--;
 					clay.spawn("bottle");
 				}
 			}
